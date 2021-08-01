@@ -14,7 +14,7 @@
 .sidebar{
   /* width: 50%; */
   text-align: left;
-  background-color: black;
+  background-color: red;
   color: white;
   transform: translate(-50rem);
   transition: ease-in 0.5s;
