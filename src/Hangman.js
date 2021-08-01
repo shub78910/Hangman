@@ -28,7 +28,6 @@ function Hangman() {
     })
 
     const[gameStatus,setGameStatus] = useState("")
-    const[counter,setCounter] = useState(0)
 
     function guessedWord() {
         guessedWordArray = data.answer.split("").map(letter => (data.guessed.has(letter) ? letter : " __ "))
@@ -37,7 +36,7 @@ function Hangman() {
 
     let gameOver = data.noOfWrong >= defaultProps.maxWrong || gameStatus==="You win!" || gameStatus==="You lose!";
 
-    let isWinner = counter == data.answer.length
+    let isWinner = guessedWordArray?.join("") == data.answer
     
 
     function handleAplhabetClick(e) {
@@ -47,7 +46,6 @@ function Hangman() {
                 ...data,
                 guessed: data.guessed.add(clickedLetter),
             })
-            setCounter(counter+1)
         }
         else {
             setData({
@@ -77,7 +75,6 @@ function Hangman() {
         })
 
         setGameStatus("")
-        setCounter(0)
     }
 
     function sidebarOpen(){
