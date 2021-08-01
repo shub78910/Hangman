@@ -30,25 +30,13 @@ function Hangman() {
     const[gameStatus,setGameStatus] = useState("")
 
     function guessedWord() {
-        guessedWordArray = (data.answer.split("").map(letter => (data.guessed.has(letter) ? letter : " __ ")))
+        guessedWordArray = data.answer.split("").map(letter => (data.guessed.has(letter) ? letter : " __ "))
         return guessedWordArray
     }
 
     let gameOver = data.noOfWrong >= defaultProps.maxWrong || gameStatus==="You win!" || gameStatus==="You lose!";
 
     let isWinner = guessedWordArray?.join("") == data.answer
-
-    useEffect(()=>{
-        if(gameOver || isWinner){
-            if (isWinner) {
-                setGameStatus("You win!")
-            }
-            else{
-                setGameStatus("You lose!")
-            }
-        }
-    },[guessedWordArray])
-
     
 
     function handleAplhabetClick(e) {
@@ -67,6 +55,17 @@ function Hangman() {
         }
 
     }
+
+    useEffect(()=>{
+        if(gameOver || isWinner){
+            if (isWinner) {
+                setGameStatus("You win!")
+            }
+            else{
+                setGameStatus("You lose!")
+            }
+        }
+    },[guessedWordArray])
 
     function resetGame() {
         setData({
@@ -90,6 +89,7 @@ function Hangman() {
             <div className='burger_line'></div>
             <div className='burger_line'></div>
         </div>
+
         <div className="sidebar">
             <h2>Instructions and guides</h2>
             <p>
