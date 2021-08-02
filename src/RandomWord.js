@@ -9,7 +9,7 @@ let movies =
     "borat": "My country send me to the United States to make a movie-film. Please, come and see my film. If not success, I will be execute.",
     "joker": "I just don’t want to feel so bad anymore.",
     "life-of-pi": "Richar parkerrrr!!!",
-    "the-terminal": "Krakozhiaa",
+    "the-terminal": "Krakozhiaa!/TomHanks/Airport",
     "memento": "Nolan classic",
     "rockstar": "AR rahman/Mohit Chauhan",
     "good-will-hunting": "He pushes people away before they get a chance to leave him. It's a defense mechanism. And for 20 years he's been alone because of that.",

@@ -20,6 +20,13 @@ let alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 
 let guessedWordArray;
 
+// in the deployed version of this, the is winner thing is not working properly.
+// do that tomorrow first thing
+// then you have to stylise the memory card app
+// add transistions and flips and also, add timer
+// then youmay post them on linked in and chill.
+
+
 function Hangman() {
     const [data, setData] = useState({
         noOfWrong: 0,
@@ -36,8 +43,7 @@ function Hangman() {
 
     let gameOver = data.noOfWrong >= defaultProps.maxWrong || gameStatus==="You win!" || gameStatus==="You lose!";
 
-    let isWinner = guessedWordArray?.join("") == data.answer
-    
+    let isWinner = !guessedWordArray?.includes(" __ ");
 
     function handleAplhabetClick(e) {
         let clickedLetter = e.target.innerText;
