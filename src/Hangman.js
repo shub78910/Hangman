@@ -18,6 +18,7 @@ let alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
     'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
     't', 'u', 'v', 'w', 'x', 'y', 'z',"-"];
 
+let guessedWordArray;
 
 // in the deployed version of this, the is winner thing is not working properly.
 // do that tomorrow first thing
@@ -34,8 +35,6 @@ function Hangman() {
     })
 
     const[gameStatus,setGameStatus] = useState("")
-    
-    let guessedWordArray;
 
     function guessedWord() {
         guessedWordArray = data.answer.split("").map(letter => (data.guessed.has(letter) ? letter : " __ "))
